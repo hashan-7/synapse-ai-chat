@@ -4,35 +4,33 @@ Synapse AI Chat 🧠✨
 
 Your Intelligent Gateway to Real-Time Knowledge & Deep Research.
 
+Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time information retrieval and deep analysis. Unlike static AI models, Synapse leverages a Search-First Approach, fetching the latest data from the web, academic journals, and video platforms to ensure answers are factual and current.
+
 </div>
 
-🌟 Introduction
+✨ Core Features
 
-Synapse AI Chat is a comprehensive AI Research Assistant designed to provide up-to-the-minute information and deep analysis. Unlike traditional LLMs, Synapse utilizes a Search-First Approach, fetching live data from the web, academic journals, and video platforms to ensure every answer is factual, current, and cited.
+🔍 Search-First Architecture: Prioritizes live web data using Google Custom Search API to ensure high factual accuracy.
 
-Built with a robust Python Flask backend and a responsive Liquid Glass UI (Vanilla JS), it bridges the gap between raw web data and intelligent insights.
+🎓 Deep Research Engine: Conducts academic-level research, aggregates multiple sources, and generates structured PDF reports with citations.
 
-🚀 Key Features
+🖼️ Multimodal AI Support:
 
-🔍 Search-First Architecture Leverages Google Custom Search to provide answers based on real-time web intelligence.
+Create Image: Generate high-quality images from text prompts.
 
-🎓 Deep Research Engine Aggregates multiple academic sources to generate structured, in-depth research reports.
+Describe Image: Analyze and explain uploaded images.
 
-🖼️ Multimodal AI Capabilities
+Search Image: Find relevant images from across the web.
 
-Create Image: Generate high-quality visuals from text prompts.
+🎥 Video Intelligence: Fetches and contextualizes relevant YouTube videos using the YouTube Data API v3.
 
-Describe Image: Analyze and explain content within uploaded images.
+💬 Intelligent Chat: Engages in natural, context-aware conversations powered by the Google Gemini API.
 
-Search Image: Discover relevant images from across the web.
-
-🎥 Video Intelligence Fetches and contextualizes YouTube videos directly into your chat.
-
-💬 Intelligent Contextual Chat Maintains conversation history for natural, flowing interactions powered by Google Gemini.
-
-🔐 Secure Authentication Privacy-focused user sessions managed via Google OAuth 2.0.
+🔐 Secure Authentication: Secure user login and session management handled via Google OAuth 2.0.
 
 🛠️ Tech Stack
+
+This project is built with a reliable and modern technology stack:
 
 Component
 
@@ -52,23 +50,23 @@ Google Gemini API (Pro/Flash)
 
 Search APIs
 
-Google Custom Search API, YouTube Data API v3
+Google Custom Search, YouTube Data API v3
 
 Frontend
 
-HTML5, CSS3 (Liquid Glass UI), Vanilla JavaScript
+HTML5, CSS3, Vanilla JavaScript (No frameworks)
 
 PDF Engine
 
 jsPDF, html2canvas
 
-Visualization
+Auth
 
-vis.js (Mind Maps)
+Google OAuth 2.0
 
 ⚙️ Getting Started
 
-Follow these steps to set up and run Synapse AI Chat on your local machine.
+Follow these steps to set up Synapse AI Chat locally on your machine.
 
 ✅ Prerequisites
 
@@ -76,17 +74,17 @@ Python 3.10+
 
 MySQL Server
 
-Google Cloud Console credentials (API Key & OAuth Client ID)
+Google Cloud Console Account (for API Keys)
 
 🔧 Installation & Setup
 
-Clone the Repository
+Clone the Repository:
 
 git clone [https://github.com/hashan-7/synapse-ai-chat.git](https://github.com/hashan-7/synapse-ai-chat.git)
 cd synapse-ai-chat
 
 
-Create Virtual Environment
+Create Virtual Environment:
 
 python -m venv venv
 # Windows
@@ -95,23 +93,24 @@ venv\Scripts\activate
 source venv/bin/activate
 
 
-Install Dependencies
+Install Dependencies:
 
 pip install -r requirements.txt
 
 
-Configure Environment Variables Create a .env file in the root directory and add your keys:
+Configure Environment Variables:
+Create a .env file in the root directory and add your credentials. (This file is ignored by Git for security).
 
 FLASK_APP=app.py
 FLASK_ENV=development
 SECRET_KEY=your_secret_key_here
 
-# Database
+# Database Configuration
 SQLALCHEMY_DATABASE_URI=mysql+pymysql://user:password@localhost/synapse_db
 
 # AI & Search APIs
 GOOGLE_API_KEY=your_gemini_api_key
-SEARCH_API_KEY=your_google_search_key
+SEARCH_API_KEY=your_google_search_api_key
 SEARCH_ENGINE_ID=your_search_engine_id
 
 # OAuth
@@ -119,26 +118,24 @@ GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 
 
-Initialize Database
+Initialize Database:
 
 flask db init
 flask db migrate
 flask db upgrade
 
 
-Run the Application
+Run the Application:
 
 flask run
 
 
-Access the app at 👉 http://localhost:5000
+Access the app at: http://localhost:5000
 
 🤝 Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions are welcome! If you'd like to improve the UI or add new features, feel free to open an issue or submit a pull request.
 
-<div align="center">
-
-Made with ❤️ by hashan-7
-
-</div>
+<p align="center">
+Made with by <b>hashan-7</b>
+</p>
