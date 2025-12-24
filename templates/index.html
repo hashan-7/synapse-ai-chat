@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse AI Chat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --background-color: #0d1117;
+            --container-bg: rgba(25, 25, 25, 0.7); /* Darker, slightly transparent */
+            --primary-color: #e5e7eb; /* Light Grey (primary for text/accents) */
+            --secondary-color: #9ca3af; /* Medium Grey (for button/accents) */
+            --text-color: #d1d5db; /* Light grey for main text */
+            --heading-color: #ffffff; /* Pure white for headings */
+            --border-color: #4b5563; /* Darker grey border */
+            --glow-color: rgba(229, 231, 235, 0.1); /* Subtle white glow */
+            --shadow-color: rgba(0, 0, 0, 0.4); /* Darker shadows */
+            --button-text-color: #111827; /* Dark text for light button */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #synapse-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-card {
+            background-color: var(--container-bg);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(15px);
+            max-width: 650px; /* Slightly wider for better balance */
+            box-shadow: 0 10px 40px var(--shadow-color), 0 0 80px var(--glow-color) inset;
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .logo { display: inline-block; color: var(--primary-color); width: 64px; height: 64px; margin-bottom: 24px; }
+
+        .headline {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 768px) {
+            .headline { font-size: 2.2rem; }
+        }
+
+
+        .sub-headline {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.7;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .signin-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: var(--button-text-color);
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px var(--shadow-color);
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 5px 20px var(--shadow-color); }
+            50% { transform: scale(1.03); box-shadow: 0 8px 30px var(--shadow-color); }
+            100% { transform: scale(1); box-shadow: 0 5px 20px var(--shadow-color); }
+        }
+
+        .signin-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px var(--shadow-color);
+            animation: none;
+        }
+
+        .signin-button svg { width: 24px; height: 24px; }
+
+        .content-section {
+            width: 100%;
+            padding: 100px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title { font-size: 2.5rem; color: var(--heading-color); margin-bottom: 60px; }
+        @media (max-width: 768px) {
+            .section-title { font-size: 2rem; margin-bottom: 40px; }
+        }
+
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        .feature-card {
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 16px;
+            backdrop-filter: blur(15px);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover { transform: translateY(-8px); border-color: var(--primary-color); }
+        .feature-card svg { width: 32px; height: 32px; color: var(--primary-color); margin-bottom: 16px; }
+        .feature-card h3 { font-size: 1.3rem; color: var(--heading-color); margin-bottom: 12px; }
+        .feature-card p { font-size: 1rem; line-height: 1.7; }
+
+        .about-section {
+            background-color: var(--container-bg); /* Use container bg for continuity */
+            border: 1px solid var(--border-color);
+            border-radius: 60px; /* Slightly less rounded than before for modern look */
+            margin: 80px auto; /* Centered with vertical spacing */
+            padding: 60px 40px;
+            max-width: 900px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 40px var(--shadow-color), 0 0 80px var(--glow-color) inset;
+        }
+        @media (max-width: 768px) {
+            .about-section { border-radius: 30px; padding: 40px 20px; margin: 60px 20px; }
+        }
+
+
+        .site-footer {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--background-color);
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-content p { color: #8b949e; margin-bottom: 20px; }
+        .footer-content span { font-weight: 600; color: var(--text-color); }
+        .social-links a {
+            color: #8b949e;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+        .social-links a:hover { color: var(--primary-color); transform: translateY(-3px); }
+        .social-links svg { width: 24px; height: 24px; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+<canvas id="synapse-background"></canvas>
+
+<main>
+    <div class="main-container">
+        <div class="hero-card">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V8.25a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 8.25v7.5a2.25 2.25 0 0 0 2.25 2.25Z" />
+                </svg>
+            </div>
+            <h1 class="headline">Unlock Insights. Instantly.</h1>
+            <p class="sub-headline">Synapse AI Chat transforms your questions into clear, concise answers, drawing from the vast, real-time intelligence of the web. Begin your journey to smarter discovery.</p>
+            <a href="/login" class="signin-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 381.5 512 244 512 106.4 512 0 403.3 0 261.8 0 120.3 106.4 11.8 244 11.8c70.3 0 136.5 28.7 184.4 75.4l-62.5 62.5C330.7 116.5 289.4 96.2 244 96.2c-109.3 0-197.8 88.5-197.8 197.8s88.5 197.8 197.8 197.8c121.2 0 171.2-88.5 175.1-133.4H244V235.1h232.1c1.3 12.8 2.2 26.2 2.2 39.9z"/></svg>
+                <span>Sign In with Google</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="content-section features-section">
+        <h2 class="section-title reveal">The Power of Synapse</h2>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+                <h3>Real-Time Web Intelligence</h3>
+                <p>Experience answers based on the most current information available. Synapse actively browses the web to provide up-to-the-minute insights.</p>
+            </div>
+            <div class="feature-card reveal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                <h3>Artfully Summarized Answers</h3>
+                <p>No more sifting through search results. Our AI intelligently distills complex information into clear, easy-to-understand summaries.</p>
+            </div>
+            <div class="feature-card reveal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z" /></svg>
+                <h3>Your Conversations, Secure</h3>
+                <p>Chat with confidence. Your interactions are protected through secure Google authentication, ensuring your privacy is paramount.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section about-section reveal">
+        <h2 class="section-title">Our Vision for Synapse</h2>
+        <p class="sub-headline" style="max-width: 700px;">Synapse AI Chat represents a fresh perspective on how we interact with information. Built with a passion for clarity and intelligent design, this project showcases a seamless blend of advanced AI and user-centric experience, making complex data accessible and engaging for everyone.</p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content reveal">
+        <p class="copyright">&copy; 2025 Synapse AI. All rights reserved.</p>
+        <!-- Footer Links Removed as requested -->
+    </div>
+</footer>
+
+<script>
+    // Synapse background animation
+    const canvas = document.getElementById('synapse-background');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    const particleCount = window.innerWidth < 768 ? 30 : 50; // Adjust particle count for smaller screens
+
+    class Particle {
+        constructor(x, y) {
+            this.x = x || Math.random() * canvas.width;
+            this.y = y || Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = 1.5 + Math.random() * 1.5;
+            this.color = 'rgba(229, 231, 235, 0.5)'; // Particle color from primary
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+
+    function initParticles() {
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function connectParticles() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i; j < particles.length; j++) {
+                const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                if (dist < 150) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(229, 231, 235, ${0.8 - dist / 150})`; // Line color from primary with alpha
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        connectParticles();
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+    });
+
+    initParticles();
+    animate();
+
+    // Scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

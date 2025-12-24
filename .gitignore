@@ -1,0 +1,40 @@
+Environment variables
+
+.env
+
+Python virtual environment
+
+venv/
+env/
+ENV/
+bin/
+lib/
+include/
+
+Python cache
+
+pycache/
+*.py[cod]
+*$py.class
+
+IDE Settings
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+OS generated files
+
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+Flask/Database files
+
+instance/
+*.sqlite3
+*.db
+*.sql

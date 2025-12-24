@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+PyMySQL
+google-generativeai
+Pillow
+python-dotenv
+google-api-python-client
+authlib
+requests
