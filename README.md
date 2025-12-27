@@ -1,4 +1,4 @@
-## Synapse AI Chat 🧠✨
+### Synapse AI Chat 🧠✨
 
 Your Intelligent Gateway to Real-Time Knowledge & Deep Research.
 
@@ -21,7 +21,7 @@ Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time i
 
  * 🎥 Video Intelligence: Fetches and contextualizes relevant YouTube videos using the YouTube Data API v3.
 
- *💬 Intelligent Chat: Engages in natural, context-aware conversations powered by the Google Gemini API.
+ * 💬 Intelligent Chat: Engages in natural, context-aware conversations powered by the Google Gemini API.
 
  * 🔐 Secure Authentication: Secure user login and session management handled via Google OAuth 2.0.
 
@@ -30,39 +30,28 @@ Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time i
 
 This project is built with a reliable and modern technology stack:
 
+
 ## Component
 
 Technology Used
 
- * Backend
+ * Backend :  Python, Flask, Flask-SQLAlchemy
 
-   * Python, Flask, Flask-SQLAlchemy
+* Database : MySQL (Cloud/Local)
 
-* Database
+* AI Models : Google Gemini API (Pro/Flash)
 
-   * MySQL (Cloud/Local)
+* Search APIs : Google Custom Search, YouTube Data API v3
 
-* AI Models
+* Frontend : HTML5, CSS3, Vanilla JavaScript (No frameworks)
 
-   * Google Gemini API (Pro/Flash)
+* PDF Engine : jsPDF, html2canvas
 
-* Search APIs
+* Auth : Google OAuth 2.0
 
-   * Google Custom Search, YouTube Data API v3
 
-* Frontend
 
-   * HTML5, CSS3, Vanilla JavaScript (No frameworks)
-
-* PDF Engine
-
-   * jsPDF, html2canvas
-
-* Auth
-
-   * Google OAuth 2.0
-
-⚙️ Getting Started
+# ⚙️ Getting Started
 
 Follow these steps to set up Synapse AI Chat locally on your machine.
 
@@ -77,6 +66,7 @@ Google Cloud Console Account (for API Keys)
 🔧 Installation & Setup
 
 Clone the Repository:
+
 
 git clone [https://github.com/hashan-7/synapse-ai-chat.git](https://github.com/hashan-7/synapse-ai-chat.git)
 cd synapse-ai-chat
