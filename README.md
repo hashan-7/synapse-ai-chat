@@ -51,13 +51,14 @@ Follow these steps to set up Synapse AI Chat locally on your machine.
 
 ✅ Prerequisites
 
-Python 3.10+
+ * Python 3.10+
 
-MySQL Server
+ * MySQL Server
 
-Google Cloud Console Account (for API Keys)
+ * Google Cloud Console Account (for API Keys)
 
-🔧 Installation & Setup
+
+# 🔧 Installation & Setup
 
 Clone the Repository:
 
@@ -127,6 +128,12 @@ Access the app at: http://localhost:5000
 
 Contributions are welcome! If you'd like to improve the UI or add new features, feel free to open an issue or submit a pull request.
 
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
 <p align="center">
-Made with by <b>H7</b>
+  Made with ❤️ by h7
 </p>
