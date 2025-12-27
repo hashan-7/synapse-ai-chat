@@ -1,5 +1,5 @@
 # Synapse AI Chat 🧠✨
-
+---
 Your Intelligent Gateway to Real-Time Knowledge & Deep Research.
 
 Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time information retrieval and deep analysis. Unlike static AI models, Synapse leverages a Search-First Approach, fetching the latest data from the web, academic journals, and video platforms to ensure answers are factual and current.
