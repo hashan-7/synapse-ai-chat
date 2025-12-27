@@ -1,68 +1,66 @@
-<div align="center">
-
-Synapse AI Chat 🧠✨
+## Synapse AI Chat 🧠✨
 
 Your Intelligent Gateway to Real-Time Knowledge & Deep Research.
 
 Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time information retrieval and deep analysis. Unlike static AI models, Synapse leverages a Search-First Approach, fetching the latest data from the web, academic journals, and video platforms to ensure answers are factual and current.
 
-</div>
 
-✨ Core Features
+# ✨ Core Features
 
-🔍 Search-First Architecture: Prioritizes live web data using Google Custom Search API to ensure high factual accuracy.
+ * 🔍 Search-First Architecture: Prioritizes live web data using Google Custom Search API to ensure high factual accuracy.
 
-🎓 Deep Research Engine: Conducts academic-level research, aggregates multiple sources, and generates structured PDF reports with citations.
+ * 🎓 Deep Research Engine: Conducts academic-level research, aggregates multiple sources, and generates structured PDF reports with citations.
 
-🖼️ Multimodal AI Support:
+ * 🖼️ Multimodal AI Support:
 
-Create Image: Generate high-quality images from text prompts.
+ * Create Image: Generate high-quality images from text prompts.
 
-Describe Image: Analyze and explain uploaded images.
+ * Describe Image: Analyze and explain uploaded images.
 
-Search Image: Find relevant images from across the web.
+ * Search Image: Find relevant images from across the web.
 
-🎥 Video Intelligence: Fetches and contextualizes relevant YouTube videos using the YouTube Data API v3.
+ * 🎥 Video Intelligence: Fetches and contextualizes relevant YouTube videos using the YouTube Data API v3.
 
-💬 Intelligent Chat: Engages in natural, context-aware conversations powered by the Google Gemini API.
+ *💬 Intelligent Chat: Engages in natural, context-aware conversations powered by the Google Gemini API.
 
-🔐 Secure Authentication: Secure user login and session management handled via Google OAuth 2.0.
+ * 🔐 Secure Authentication: Secure user login and session management handled via Google OAuth 2.0.
 
-🛠️ Tech Stack
+
+# 🛠️ Tech Stack
 
 This project is built with a reliable and modern technology stack:
 
-Component
+## Component
 
 Technology Used
 
-Backend
+ * Backend
 
-Python, Flask, Flask-SQLAlchemy
+   * Python, Flask, Flask-SQLAlchemy
 
-Database
+* Database
 
-MySQL (Cloud/Local)
+   * MySQL (Cloud/Local)
 
-AI Models
+* AI Models
 
-Google Gemini API (Pro/Flash)
+   * Google Gemini API (Pro/Flash)
 
-Search APIs
+* Search APIs
 
-Google Custom Search, YouTube Data API v3
+   * Google Custom Search, YouTube Data API v3
 
-Frontend
+* Frontend
 
-HTML5, CSS3, Vanilla JavaScript (No frameworks)
+   * HTML5, CSS3, Vanilla JavaScript (No frameworks)
 
-PDF Engine
+* PDF Engine
 
-jsPDF, html2canvas
+   * jsPDF, html2canvas
 
-Auth
+* Auth
 
-Google OAuth 2.0
+   * Google OAuth 2.0
 
 ⚙️ Getting Started
 
