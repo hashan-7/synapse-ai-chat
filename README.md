@@ -7,7 +7,7 @@ Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time i
 
 
 
-# ✨ Core Features
+## ✨ Core Features
 
  * 🔍 Search-First Architecture: Prioritizes live web data using Google Custom Search API to ensure high factual accuracy.
 
@@ -29,12 +29,12 @@ Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time i
 
 ---
 
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 This project is built with a reliable and modern technology stack:
 
 
-# Component
+## Component
 
 Technology Used
 
@@ -48,7 +48,7 @@ Technology Used
 
 ---
 
-# ⚙️ Getting Started
+## ⚙️ Getting Started
 
 Follow these steps to set up Synapse AI Chat locally on your machine.
 
@@ -59,7 +59,8 @@ Follow these steps to set up Synapse AI Chat locally on your machine.
  * Google Cloud Console Account (for API Keys)
 
 ---
-# 🔧 Installation & Setup
+
+## 🔧 Installation & Setup
 
 Clone the Repository:
 
@@ -85,7 +86,7 @@ Install Dependencies:
 pip install -r requirements.txt
 ```
 
-# Configure Environment Variables:
+## Configure Environment Variables:
 
 Create a .env file in the root directory and add your credentials. (This file is ignored by Git for security).
 
@@ -125,7 +126,7 @@ flask run
 Access the app at: http://localhost:5000
 ```
 
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome! If you'd like to improve the UI or add new features, feel free to open an issue or submit a pull request.
 
