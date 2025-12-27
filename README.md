@@ -1,8 +1,9 @@
-### Synapse AI Chat 🧠✨
+# Synapse AI Chat 🧠✨
 
 Your Intelligent Gateway to Real-Time Knowledge & Deep Research.
 
 Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time information retrieval and deep analysis. Unlike static AI models, Synapse leverages a Search-First Approach, fetching the latest data from the web, academic journals, and video platforms to ensure answers are factual and current.
+---
 
 
 # ✨ Core Features
@@ -25,13 +26,14 @@ Synapse AI Chat is a comprehensive AI-powered assistant designed for real-time i
 
  * 🔐 Secure Authentication: Secure user login and session management handled via Google OAuth 2.0.
 
+---
 
 # 🛠️ Tech Stack
 
 This project is built with a reliable and modern technology stack:
 
 
-## Component
+# Component
 
 Technology Used
 
@@ -43,7 +45,7 @@ Technology Used
  * PDF Engine : jsPDF, html2canvas
  * Auth : Google OAuth 2.0
 
-
+---
 
 # ⚙️ Getting Started
 
@@ -52,12 +54,10 @@ Follow these steps to set up Synapse AI Chat locally on your machine.
 ✅ Prerequisites
 
  * Python 3.10+
-
  * MySQL Server
-
  * Google Cloud Console Account (for API Keys)
 
-
+---
 # 🔧 Installation & Setup
 
 Clone the Repository:
